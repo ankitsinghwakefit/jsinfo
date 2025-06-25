@@ -47,7 +47,7 @@ function getTotalSalary(obj){
     return totalSal;
 }
 
-console.log(getTotalSalary(company));
+//console.log(getTotalSalary(company));
 
 function getPow(num, pow) {
   if (pow == 1) {
@@ -58,3 +58,42 @@ function getPow(num, pow) {
 }
 
 //console.log(getPow(3, 3));
+
+
+// sumTo(1) = 1
+// sumTo(2) = 2 + 1 = 3
+// sumTo(3) = 3 + 2 + 1 = 6
+// sumTo(4) = 4 + 3 + 2 + 1 = 10
+function sumTo(n){
+  let sum = 0;
+  if(n === 1){
+    return n;
+  } else {
+    sum = n + sumTo(n-1);
+  }
+  return sum;
+} 
+
+//console.log(sumTo(4));
+
+
+// 1, 1, 2, 3, 5, 8, 13, 21
+
+function fib(n) {
+  let current = 1;
+  let prev = 1;
+  if(n <= 1){
+    return n
+  } else {
+    for(let i = 3; i<=n; i++){
+      let next = current + prev
+      prev = current
+      current = next
+    }
+  }
+  console.log(current)
+}
+
+fib(5);
+fib(6);
+fib(77);
